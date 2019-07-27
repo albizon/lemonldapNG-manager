@@ -26,6 +26,7 @@ RUN echo "# Configure nginx to log to standard streams" && \
 	ln -sf /dev/stderr /var/log/nginx/error.log
 
 COPY entrypoint.sh /
+COPY run_tests.sh /
 
 VOLUME ["/etc/lemonldap-ng","/var/lib/lemonldap-ng/conf", "/var/lib/lemonldap-ng/sessions", "/var/lib/lemonldap-ng/psessions"]
 

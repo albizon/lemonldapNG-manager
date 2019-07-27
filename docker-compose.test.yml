@@ -12,7 +12,7 @@ services:
       
   sut:
     build: .
-    command: /entrypoint.sh
+    command: /run_tests.sh
     ports:
       - "80:80"
     depends_on:
