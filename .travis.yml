@@ -5,8 +5,10 @@ services:
 
 before_install:
   - docker build -t abizon/lemonldapng-manager .
-  - docker run -d -p 127.0.0.1:80:80 abizon/lemonldapng-manager /bin/sh -c "/entrypoint.sh"
+  - docker run -d --name manager -p 127.0.0.1:80:80 abizon/lemonldapng-manager /bin/sh -c "/entrypoint.sh"
   - docker ps -a
+  - sleep 20
+  - docker logs -t --details manager
 
 script:
   - echo OK
